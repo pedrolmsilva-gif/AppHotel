@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.SobrePage"
+             Title="Sobre o Projeto">
+
+    <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Image Source="dotnet_bot.png" 
+               HeightRequest="150" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,20"/>
+
+        <Label Text="Fichário - Agenda 13" 
+               FontSize="22" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+
+        <Label Text="Disciplina: Desenvolvimento de Sistemas II" 
+               FontSize="16" 
+               HorizontalOptions="Center" />
+
+        <Frame BorderColor="#ccc" CornerRadius="10" Padding="20" Margin="0,20,0,0" HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Desenvolvido por:" FontAttributes="Bold" />
+                <Label Text="Pedro Luis Moreira Da Silva" FontSize="18" TextColor="#2c3e50" />
+
+                <BoxView HeightRequest="1" Color="#eee" Margin="0,10" />
+
+                <Label Text="Ano de Desenvolvimento:" FontAttributes="Bold" />
+                <Label Text="2026" FontSize="18" TextColor="#2c3e50" />
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

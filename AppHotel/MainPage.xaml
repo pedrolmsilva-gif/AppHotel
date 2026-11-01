@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.MainPage"
+             Title="Reserva de Hotel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label Text="Nova Reserva" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#2c3e50" />
+
+            <Entry Placeholder="Nome completo do hóspede" 
+                   ClearButtonVisibility="WhileEditing" />
+
+            <Picker Title="Selecione o tipo de quarto">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Standard (Simples)</x:String>
+                        <x:String>Executivo</x:String>
+                        <x:String>Suíte Luxo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label Text="Quantidade de Hóspedes:" VerticalOptions="Center" />
+                <Stepper Minimum="1" Maximum="10" Increment="1" x:Name="StpHospedes" />
+                <Label Text="{Binding Source={x:Reference StpHospedes}, Path=Value}" 
+                       VerticalOptions="Center" FontSize="18" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *" ColumnSpacing="15">
+                <Label Grid.Row="0" Grid.Column="0" Text="Check-in:" />
+                <DatePicker Grid.Row="1" Grid.Column="0" Format="dd/MM/yyyy" />
+
+                <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" />
+                <DatePicker Grid.Row="1" Grid.Column="1" Format="dd/MM/yyyy" />
+            </Grid>
+
+            <Button Text="Confirmar Reserva" 
+                    Margin="0,20,0,0" 
+                    BackgroundColor="#27ae60" 
+                    CornerRadius="8" />
+
+            <Button Text="Sobre o Desenvolvedor" 
+                    Clicked="OnSobreClicked"
+                    BackgroundColor="#2980b9" 
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
